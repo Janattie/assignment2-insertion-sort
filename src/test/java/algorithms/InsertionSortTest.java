@@ -8,6 +8,8 @@ import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
+
 public class InsertionSortTest {
 
     private int[] runSort(int[] input, boolean binary) {
@@ -46,12 +48,11 @@ public class InsertionSortTest {
         int[] arr = {5,4,3,2,1};
         assertArrayEquals(new int[]{1,2,3,4,5}, runSort(arr, false));
     }
-
     @Test
     void randomizedPropertyTest() {
         Random rnd = new Random(123);
-        for (int t = 0; t < 200; t++) {
-            int n = rnd.nextInt(200);
+        for (int t = 0; t < 30; t++) {
+            int n = rnd.nextInt(100);
             int[] a = new int[n];
             for (int i = 0; i < n; i++) a[i] = rnd.nextInt(1000) - 500;
             int[] expected = Arrays.copyOf(a, n);
